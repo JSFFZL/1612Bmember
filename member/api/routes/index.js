@@ -70,12 +70,38 @@ router.post('/api/updateUser', function(req, res, next) {
   var id = req.body.id;
   var obj = req.body;
   delete obj.id;
-  mongo.update(db,col,[{"_id":id},obj],function(result){
-    if(!result){
-      res.json({code:0,msg:"删除错误！"})
-    }else{
-      res.json({code:1,msg:"删除成功！"})
-    }
-  })
+  console.log(obj)
+
+  if(!id){
+    res.json({code:3,msg:"参数为空！"})
+  }else{
+    mongo.update(db,col,[{"_id":id},obj],function(result){
+      if(!result){
+        res.json({code:0,msg:"更改失败！"})
+      }else{
+        res.json({code:1,msg:"更改成功！"})
+      }
+    })
+  }
+  
 });
+
+
+/* 添加成员信息 */
+router.post('/api/insertUser', function(req, res, next) {
+  var obj = req.body;
+  if(!obj.name && !obj.sex && !obj.age){
+    res.json({code:3,msg:"参数为空！"})
+  }else{
+    mongo.insert(db,col,obj,function(result){
+      if(!result){
+        res.json({code:0,msg:"添加失败！"})
+      }else{
+        res.json({code:1,msg:"添加成功！"})
+      }
+    })
+  }
+  
+});
+
 module.exports = router;

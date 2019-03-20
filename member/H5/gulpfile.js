@@ -25,7 +25,9 @@ gulp.task('webserver',function(){
 		proxies:[
 			{source:"/api/getUser",target:"http://localhost:3000/api/getUser"},
 			{source:"/api/deleteUser",target:"http://localhost:3000/api/deleteUser"},
-			{source:"/api/getUserDetailt",target:"http://localhost:3000/api/getUserDetailt"}
+			{source:"/api/getUserDetailt",target:"http://localhost:3000/api/getUserDetailt"},
+			{source:"/api/updateUser",target:"http://localhost:3000/api/updateUser"},
+			{source:"/api/getUserSea",target:"http://localhost:3000/api/getUserSea"}
 		]
     }))
 })

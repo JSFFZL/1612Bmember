@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<link href="css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
 
 	</head>
 	<body>
@@ -13,7 +13,11 @@
 		<header class="mui-bar mui-bar-nav">
 			<h1 class="mui-title">1612B-成员列表</h1>
 		</header>
+		
 		<div class="mui-content">
+			<div class="mui-input-row mui-search">
+				<input type="search" class="mui-input-clear search" placeholder="请输入姓名">
+			</div>
 			<ul class="mui-table-view list">
 				<!-- <li class="mui-table-view-cell">
 					<span>456123</span>
@@ -22,7 +26,22 @@
 				</li> -->
 			</ul>
 		</div>
-
+		<!-- <div id="" style="position: fixed;top: 0;left: 0; right: 0; bottom: 0; z-index: 999;">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>用户名</label>
+					<input type="text" class="mui-input-clear" placeholder="请输入用户名">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input type="password" class="mui-input-password" placeholder="请输入密码">
+				</div>
+				<div class="mui-button-row">
+					<button type="button" class="mui-btn mui-btn-primary">确认</button>
+					<button type="button" class="mui-btn mui-btn-danger">取消</button>
+				</div>
+			</form>
+		</div> -->
 
 
 		<script src="js/libs/require.js" type="text/javascript" data-main="js/index.js" charset="utf-8"></script>
