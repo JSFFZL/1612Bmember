@@ -16,6 +16,22 @@ router.get('/api/getUser', function(req, res, next) {
   })
 });
 
+/* 查询所有成员信息（分页） */
+router.post('/api/getUserPage', function(req, res, next) {
+  var page = req.body.page;
+  var pageSize = req.body.pageSize;
+  mongo.find(db,col,function(result){
+    if(!result){
+      res.json({code:0,msg:"查询错误！"});
+    }else{
+      res.json({code:1,data:result});
+    }
+  },{
+    skip:(page - 1) * pageSize,
+    limit:pageSize
+  })
+});
+
 /* 查询具体成员信息 */
 router.post('/api/getUserDetailt', function(req, res, next) {
   var id = req.body.id;
